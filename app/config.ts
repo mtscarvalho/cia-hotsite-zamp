@@ -1,0 +1,12 @@
+export const config = {
+  company: {
+    name: "Zamp",
+    website: "https://sitedaempresa.com.br",
+  },
+  program: {
+    id: "1234",
+    year: 2021,
+    startDate: "2021-01-01",
+    endDate: "2021-12-31",
+  },
+};

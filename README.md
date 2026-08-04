@@ -24,3 +24,6 @@ builds the site; append the project's real upload/deploy command to that script:
 
 This export does not require a Node.js server. Routes must be statically known at
 build time, and server-only Next.js features cannot be used.
+
+Next.js always emits a not-found page during static export. The postbuild script
+removes its generated files automatically before the dist folder is published.
