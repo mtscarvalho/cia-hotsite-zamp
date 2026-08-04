@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --font-poppins: var(--font-poppins);
+
+  /* primitive */
+  --color-brand-blue: #0000ff;
+  --color-brand-dark-blue: #060037;
+  --color-brand-yellow: #ffb800;
+  --color-brand-light-gray: #eeeeee;
+  --color-brand-dark-gray: #2e2e2e;
+
+  /* tokens */
+  --color-body: var(--color-brand-dark-gray);
+  --color-accent: var(--color-brand-blue);
+}
+
+@utility focused {
+  @apply outline-2 outline-offset-1 outline-[red] outline-dashed;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  max-width: 74rem;
+}
+
+@layer base {
+  :focus,
+  :focus-visible {
+    @apply focused;
+  }
+
+  /* :root {
+    font-size: calc(16px + 0.15vw);
+  } */
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply text-body font-poppins text-pretty;
+  }
+
+  main {
+    @apply min-w-0;
+  }
+
+  svg.lucide {
+    font-size: 2px;
+    stroke-width: 1em;
+  }
+}
+
+@layer components {
+  .back-to-top {
+    @apply fixed right-6 bottom-6 z-20 not-focus:sr-only;
+  }
+
+  .skip-to-main {
+    @apply fixed top-6 left-6 z-20 not-focus:sr-only;
+  }
+}
