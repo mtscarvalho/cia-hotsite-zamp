@@ -273,6 +273,7 @@ export default function ProcessoSeletivo() {
                   </div>
                 ))}
               </div>
+              <Image src="./processo-seletivo-00.avif" alt="" fill sizes="(max-width: 1024px) 100vw, 55vw" className="object-contain object-bottom" />
             </div>
           </div>
         </div>
