@@ -45,6 +45,12 @@ export default function Page() {
     },
   ];
 
+  const depoimentos = [
+    { name: "Catarina", video: "https://www.youtube.com/watch?v=88UmXQhkTuA", image: "/depoimento-01.avif" },
+    { name: "Maria Fernanda", video: "https://www.youtube.com/watch?v=BVt6PPtjZPw", image: "/depoimento-02.avif" },
+    { name: "Matteo", video: "https://www.youtube.com/watch?v=MOgKHtZsnDE", image: "/depoimento-03.avif" },
+  ];
+
   return (
     <main>
       <section className="py-24">
@@ -232,9 +238,9 @@ export default function Page() {
       <section className="relative overflow-hidden pb-24">
         <div className="container">
           <div className="flex justify-center gap-4">
-            <YouTubeEmbed className="bg-brand-lighter-gray aspect-9/16 max-w-82 rounded-xl" title="Estágio Zamp | Depoimento - Catarina" url="https://www.youtube.com/watch?v=88UmXQhkTuA" thumb="/depoimento-01.avif" />
-            <YouTubeEmbed className="bg-brand-lighter-gray aspect-9/16 max-w-82 rounded-xl" title="Estágio Zamp | Depoimento - Catarina" url="https://www.youtube.com/watch?v=88UmXQhkTuA" thumb="/depoimento-02.avif" />
-            <YouTubeEmbed className="bg-brand-lighter-gray aspect-9/16 max-w-82 rounded-xl" title="Estágio Zamp | Depoimento - Catarina" url="https://www.youtube.com/watch?v=88UmXQhkTuA" thumb="/depoimento-03.avif" />
+            {depoimentos.map(({ name, video, image }) => (
+              <YouTubeEmbed key={name} className="bg-brand-lighter-gray aspect-9/16 max-w-82 rounded-xl" title={`Estágio Zamp | Depoimento - ${name}`} url={video} thumb={image} />
+            ))}
           </div>
           <div className="mt-10 text-center">
             <Button>Inscreva-se</Button>
