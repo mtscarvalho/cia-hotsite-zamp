@@ -1,5 +1,6 @@
 import EstagZamp from "@/components/estag-zamp";
 import Headline from "@/components/headline";
+import ProcessoSeletivo from "@/components/processo-seletivo";
 import { Button } from "@/components/ui/button";
 import { YouTubeEmbed } from "@/components/youtube-embed";
 import { BriefcaseMedical, Bus, Cake, Check, Dumbbell, HeartPlus, PiggyBank, Utensils } from "lucide-react";
@@ -74,7 +75,7 @@ export default function Page() {
               <p className="text-center text-balance">
                 Você conhece nossas marcas. <strong className="block">Chegou a hora de conhecer o seu futuro!</strong>
               </p>
-              <Image className="mx-auto" src="/logo-roll.svg" alt="Burger King, Popeyes, Starbucks e Subway" width={443} height={95} />
+              <Image className="mx-auto" src="./logos.svg" alt="Burger King, Popeyes, Starbucks e Subway" width={443} height={95} />
             </div>
           </div>
         </div>
@@ -156,7 +157,7 @@ export default function Page() {
               </div>
             </div>
             <div className="text-center">
-              <Image className="sticky top-10 mx-auto rounded-xl" src="/pre-requisitos.avif" alt="Estágio Zamp" width={768} height={761} />
+              <Image className="sticky top-10 mx-auto rounded-xl" src="./pre-requisitos.avif" alt="Estágio Zamp" width={768} height={761} />
             </div>
           </div>
         </div>
@@ -181,27 +182,20 @@ export default function Page() {
               <Button>Inscreva-se</Button>
             </div>
             <div className="flex flex-col gap-3.5">
-              <Image className="rounded-xl" src="/beneficios-01.avif" alt="Estágio Zamp" width={960} height={612} />
+              <Image className="rounded-xl" src="./beneficios-01.avif" alt="Estágio Zamp" width={960} height={612} />
               <div className="grid grid-cols-12 gap-3.5">
                 <div className="col-span-5 grid gap-3.5">
-                  <Image className="rounded-xl" src="/beneficios-02.avif" alt="Estágio Zamp" width={380} height={380} />
-                  <Image className="rounded-xl" src="/beneficios-03.avif" alt="Estágio Zamp" width={380} height={380} />
+                  <Image className="rounded-xl" src="./beneficios-02.avif" alt="Estágio Zamp" width={380} height={380} />
+                  <Image className="rounded-xl" src="./beneficios-03.avif" alt="Estágio Zamp" width={380} height={380} />
                 </div>
-                <Image className="col-span-7 h-full flex-1 rounded-xl object-cover" src="/beneficios-04.avif" alt="Estágio Zamp" width={566} height={774} />
+                <Image className="col-span-7 h-full flex-1 rounded-xl object-cover" src="./beneficios-04.avif" alt="Estágio Zamp" width={566} height={774} />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-brand-red py-24 text-white">
-        <div className="container">
-          <Headline icons="popeyes" color="light">
-            Processo Seletivo
-          </Headline>
-          <h3 className="text-3xl font-bold">Passo a passo do seu pedido Zamp</h3>
-        </div>
-      </section>
+      <ProcessoSeletivo />
 
       <section className="py-24">
         <div className="container">
@@ -283,15 +277,31 @@ export default function Page() {
                 <Button variant="white">Inscreva-se</Button>
               </div>
             </div>
-            <div className="space-y-6">
-              <EstagZamp className="mx-auto w-[70%] md:w-full lg:w-[70%]" />
-              <p className="text-center text-balance">
-                Você conhece nossas marcas. <strong className="block">Chegou a hora de conhecer o seu futuro!</strong>
-              </p>
-              <Image className="mx-auto" src="/logo-roll.svg" alt="Burger King, Popeyes, Starbucks e Subway" width={443} height={95} />
+            <div className="">
+              <div className="relative z-0">
+                <svg className="absolute bottom-0 left-0 -z-10 w-full" width="535" height="166" viewBox="0 0 535 166" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M420.881 1.15344C424.865 1.15344 428.496 3.82655 429.523 7.84342C430.738 12.5927 427.849 17.4199 423.073 18.6281L12.28 122.47C11.5434 122.657 10.8039 122.747 10.076 122.747C6.09139 122.747 2.46057 120.074 1.43397 116.057C0.21886 111.307 3.10728 106.48 7.8836 105.272L418.674 1.43027C419.41 1.24284 420.15 1.15344 420.878 1.15344M420.878 0C420.043 0 419.205 0.10381 418.387 0.31143L7.5994 104.156C2.21117 105.517 -1.05715 110.984 0.31166 116.342C1.44847 120.792 5.46499 123.9 10.0789 123.9C10.9141 123.9 11.7522 123.796 12.57 123.589L423.357 19.7441C428.746 18.383 432.014 12.9157 430.645 7.55794C429.508 3.10853 425.492 0 420.878 0Z"
+                    fill="#FF373F"
+                  />
+                  <path
+                    d="M524.305 1.69594C528.291 1.69594 531.923 4.37259 532.949 8.39477C534.162 13.1504 531.276 17.9839 526.498 19.1937L75.8514 133.244C75.1146 133.432 74.3749 133.521 73.6468 133.521C69.6612 133.521 66.0295 130.845 65.0026 126.822C63.7901 122.067 66.6764 117.233 71.4539 116.023L522.101 1.97025C522.837 1.78257 523.577 1.69306 524.305 1.69306M524.305 0.538086C523.47 0.538086 522.631 0.642033 521.813 0.849928L71.1667 114.903C65.7887 116.263 62.5196 121.72 63.8713 127.077L63.88 127.105C65.0171 131.561 69.0347 134.673 73.6468 134.673C74.4822 134.673 75.3206 134.569 76.1386 134.362L526.785 20.3112C532.175 18.9483 535.444 13.4737 534.075 8.10891C532.938 3.65073 528.92 0.538086 524.308 0.538086H524.305Z"
+                    fill="#00662E"
+                  />
+                  <path
+                    d="M489.148 40.6078C493.138 40.6078 496.773 43.2815 497.801 47.2994C499.015 52.0499 496.126 56.8783 491.343 58.0869L162.188 141.199C161.451 141.387 160.71 141.476 159.981 141.476C155.992 141.476 152.356 138.802 151.328 134.784C150.114 130.034 153.004 125.206 157.786 123.997L486.941 40.8846C487.679 40.6972 488.419 40.6078 489.148 40.6078ZM489.148 39.3242C488.3 39.3242 487.449 39.4309 486.622 39.6386L157.467 122.751C152.002 124.13 148.686 129.668 150.074 135.096C151.227 139.604 155.301 142.754 159.978 142.754C160.826 142.754 161.677 142.647 162.505 142.439L491.663 59.33C497.127 57.9513 500.444 52.4134 499.056 46.985C497.903 42.4768 493.829 39.3271 489.151 39.3271L489.148 39.3242Z"
+                    fill="#FF6900"
+                  />
+                  <path
+                    d="M523.222 60.9538C527.21 60.9538 530.843 63.6372 531.87 67.6695C533.086 72.4371 530.196 77.2828 525.416 78.4957L188.44 163.945C187.703 164.133 186.963 164.222 186.235 164.222C182.248 164.222 178.614 161.539 177.587 157.507C176.371 152.739 179.262 147.893 184.041 146.681L521.017 61.2317C521.754 61.0435 522.494 60.9538 523.222 60.9538ZM523.222 59.7959C522.387 59.7959 521.548 59.9001 520.73 60.1085L183.757 145.56C178.365 146.927 175.095 152.415 176.464 157.793C177.602 162.26 181.621 165.38 186.238 165.38C187.073 165.38 187.912 165.276 188.73 165.068L525.704 79.6188C531.095 78.2525 534.366 72.7642 532.996 67.3858C531.858 62.9193 527.839 59.7988 523.222 59.7988V59.7959Z"
+                    fill="#FFB800"
+                  />
+                </svg>
+                <Image className="mx-auto" src="./sobre.avif" alt="Estágio Zamp" width={960} height={534} />
+              </div>
+              <YouTubeEmbed className="rounded-xl" url="https://www.youtube.com/watch?v=SR_oYGt6fyo" title="Zamp - A marca por trás das marcas que você ama" />
             </div>
           </div>
-
           <div className="text-body mt-16 grid gap-10 rounded-xl bg-white p-12 md:grid-cols-2">
             <div className="space-y-4">
               <h3 className="text-accent text-lg font-bold text-balance md:text-xl">As marcas que você ama vão dar mais sabor à sua carreira</h3>
@@ -299,7 +309,7 @@ export default function Page() {
               <p>Isso é a Zamp: um ecossistema de restaurantes e pessoas em constante evolução.</p>
             </div>
             <div className="flex justify-center">
-              <Image className="mx-auto" src="/logo-roll.svg" alt="Burger King, Popeyes, Starbucks e Subway" width={443} height={95} />
+              <Image className="mx-auto" src="./logos.svg" alt="Burger King, Popeyes, Starbucks e Subway" width={443} height={95} />
             </div>
           </div>
         </div>
@@ -316,11 +326,10 @@ export default function Page() {
               <Button variant="white">Inscreva-se</Button>
             </div>
             <div>
-              <Image className="pointer-events-none w-full origin-bottom translate-x-[-20%] scale-125" src="/call-to-action.avif" alt="Burger King, Popeyes, Starbucks e Subway" width={960} height={594} />
+              <Image className="pointer-events-none w-full origin-bottom translate-x-[-20%] scale-125" src="./call-to-action.avif" alt="Burger King, Popeyes, Starbucks e Subway" width={960} height={594} />
             </div>
           </div>
         </div>
-
         <div className="absolute bottom-0 left-0 -z-10 h-[14%] w-full bg-white"></div>
       </section>
 
