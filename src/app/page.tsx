@@ -1,6 +1,7 @@
 import EstagZamp from "@/components/estag-zamp";
+import Headline from "@/components/headline";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { BriefcaseMedical, Bus, Cake, Check, Dumbbell, HeartPlus, PiggyBank, Utensils } from "lucide-react";
 import Image from "next/image";
 
 export default function Page() {
@@ -10,9 +11,10 @@ export default function Page() {
         <div className="container">
           <div className="grid items-center gap-10 md:grid-cols-2">
             <div className="space-y-4">
-              <h2 className="text-3xl font-light">
+              <Headline>Sobre o Programa / 2027</Headline>
+              <h3 className="text-3xl font-light">
                 Algumas pessoas procuram um estágio. <strong className="text-accent font-bold">Outras procuram velocidade para crescer!</strong>
-              </h2>
+              </h3>
               <p>O Programa de Estágio Zamp 2027 foi criado para desenvolver jovens talentos que desejam acelerar sua carreira.</p>
               <p>Ao longo do programa, você viverá uma jornada personalizada de desenvolvimento, com desafios reais, autonomia, acompanhamento próximo e exposição ao negócio, preparando você para assumir responsabilidades cada vez maiores. </p>
               <p>Aqui, seu crescimento acontece na prática. Quem se destaca pode acelerar sua trajetória, avançar para novas posições, seguir para oportunidades como o Programa de Trainee e construir um caminho para futuras posições de liderança na Zamp.</p>
@@ -50,14 +52,15 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="pt-24">
         <div className="container">
           <div className="grid gap-10 md:grid-cols-2">
             <div className="space-y-6">
               <div className="space-y-4">
-                <h2 className="text-3xl font-light">
+                <Headline icons="popeyes">Pré-requisitos</Headline>
+                <h3 className="text-3xl font-light">
                   Para quem tem <strong className="text-accent font-bold">fome de crescer</strong>
-                </h2>
+                </h3>
                 <p>Nem toda carreira precisa seguir o mesmo ritmo. Na Zamp, buscamos estudantes que gostem de atuar com autonomia, pensem de forma criativa, sejam curiosos, colaborativos, tenham vontade de aprender, construir soluções, assumir responsabilidades e gerar resultados desde o início da jornada.</p>
               </div>
               <div className="border-brand-orange space-y-4 border-b pb-6">
@@ -104,14 +107,95 @@ export default function Page() {
                 </ul>
               </div>
             </div>
-            <div className="">
+            <div className="text-center">
               <Image className="sticky top-10 mx-auto rounded-xl" src="/pre-requisitos.avif" alt="Estágio Zamp" width={768} height={761} />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24"></section>
+      <section className="py-24">
+        <div className="container">
+          <div className="grid items-center gap-10 md:grid-cols-2">
+            <div className="space-y-8 md:order-last">
+              <Headline icons="popeyes">Benefícios</Headline>
+              <h3 className="text-3xl font-light">
+                Seu combo de <strong className="text-accent font-bold">benefícios</strong>
+              </h3>
+              <ul className="space-y-4">
+                <li className="flex gap-3">
+                  <PiggyBank className="bg-brand-green size-12 shrink-0 rounded-full p-3 text-white" />
+                  <p className="mt-3">Bolsa-auxílio de R$ 3.500</p>
+                </li>
+                <li className="flex gap-3">
+                  <Utensils className="bg-brand-green size-12 shrink-0 rounded-full p-3 text-white" />
+                  <p className="mt-3">Vale-refeição</p>
+                </li>
+                <li className="flex gap-3">
+                  <Bus className="bg-brand-green size-12 shrink-0 rounded-full p-3 text-white" />
+                  <p className="mt-3">Vale-transporte</p>
+                </li>
+                <li className="flex gap-3">
+                  <BriefcaseMedical className="bg-brand-green size-12 shrink-0 rounded-full p-3 text-white" />
+                  <p className="mt-3">Assistência médica</p>
+                </li>
+                <li className="flex gap-3">
+                  <Check className="bg-brand-green size-12 shrink-0 rounded-full p-3 text-white" />
+                  <p className="mt-3">Assistência odontológica</p>
+                </li>
+                <li className="flex gap-3">
+                  <HeartPlus className="bg-brand-green size-12 shrink-0 rounded-full p-3 text-white" />
+                  <p className="mt-3">Seguro de vida</p>
+                </li>
+                <li className="flex gap-3">
+                  <Dumbbell className="bg-brand-green size-12 shrink-0 rounded-full p-3 text-white" />
+                  <p className="mt-3">TotalPass</p>
+                </li>
+                <li className="flex gap-3">
+                  <Cake className="bg-brand-green size-12 shrink-0 rounded-full p-3 text-white" />
+                  <p className="mt-3">Day off no dia do aniversário</p>
+                </li>
+              </ul>
+              <Button>Inscreva-se</Button>
+            </div>
+            <div className="flex flex-col gap-3.5">
+              <Image className="rounded-xl" src="/beneficios-01.avif" alt="Estágio Zamp" width={960} height={612} />
+              <div className="grid grid-cols-12 gap-3.5">
+                <div className="col-span-5 grid gap-3.5">
+                  <Image className="rounded-xl" src="/beneficios-02.avif" alt="Estágio Zamp" width={380} height={380} />
+                  <Image className="rounded-xl" src="/beneficios-03.avif" alt="Estágio Zamp" width={380} height={380} />
+                </div>
+                <Image className="col-span-7 h-full flex-1 rounded-xl object-cover" src="/beneficios-04.avif" alt="Estágio Zamp" width={566} height={774} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#D62300] py-24 text-white">
+        <div className="container">
+          <Headline icons="popeyes" color="light">
+            Processo Seletivo
+          </Headline>
+          <h3 className="text-3xl font-bold">Passo a passo do seu pedido Zamp</h3>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="container">
+          <div className="grid gap-10 md:grid-cols-2">
+            <div className="space-y-6">
+              <Headline icons="popeyes">Pré-requisitos</Headline>
+              <h3 className="text-3xl font-light">
+                Os 5 ingredientes da <strong className="text-accent font-bold">sua aceleração</strong>
+              </h3>
+            </div>
+            <div className="pt-20">
+              <p>Criamos uma trajetória intensiva para quem quer construir em 18 meses o que a maioria leva quase meia década para alcançar. Se você tem fome de protagonismo, este é o seu lugar.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
