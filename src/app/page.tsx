@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { YouTubeEmbed } from "@/components/youtube-embed";
 import { BriefcaseMedical, Bus, Cake, Check, Dumbbell, HeartPlus, PiggyBank, Utensils } from "lucide-react";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
 export default function Page() {
   const beneficios = [
@@ -54,6 +55,78 @@ export default function Page() {
 
   return (
     <main>
+      <section className="relative z-0 bg-[url('/pattern-light.svg')] bg-center bg-repeat py-20">
+        <div className="container">
+          <div className="grid gap-10 md:grid-cols-2">
+            <div className="space-y-6">
+              <div className="flex items-center gap-x-10 gap-y-4 pb-10 max-md:flex-col-reverse">
+                <Image src="./logos.svg" alt="Burger King, Popeyes, Starbucks e Subway" width={180} height={34} />
+                <svg width="103" height="30" viewBox="0 0 103 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.376953 4.58301V9.58846H10.7067L0.376953 19.5994V24.6088H17.9001V19.5994H7.57026L17.9001 9.58846V4.58301H0.376953Z" fill="#0000FF" />
+                  <path d="M69.2141 4.58301C66.223 4.58301 63.5386 5.89492 61.706 7.97783C59.8693 5.89896 57.189 4.58301 54.1978 4.58301C52.3733 4.58301 50.6657 5.07144 49.1924 5.92721V4.58301H42.9355V9.58846H44.1869V24.6088H49.1924V14.5979C49.1924 11.8328 51.4327 9.59249 54.1978 9.59249C56.9629 9.59249 59.2033 11.8328 59.2033 14.5979V24.6088H64.2087V14.5979C64.2087 11.8328 66.449 9.59249 69.2141 9.59249C71.9793 9.59249 74.2196 11.8328 74.2196 14.5979V24.6088H79.2251V14.5979C79.2251 9.06773 74.7403 4.58704 69.2141 4.58704V4.58301Z" fill="#0000FF" />
+                  <path d="M92.9888 4.58301C91.1643 4.58301 89.4568 5.07144 87.9834 5.92721V4.58301H81.7266V9.58846H82.9779V29.6143H87.9834V23.2646C89.4568 24.1164 91.1643 24.6088 92.9888 24.6088C98.519 24.6088 103 20.1241 103 14.5979C103 9.07177 98.515 4.58704 92.9888 4.58704V4.58301ZM92.9888 19.5994C90.2237 19.5994 87.9834 17.359 87.9834 14.5939C87.9834 11.8288 90.2237 9.58846 92.9888 9.58846C95.7539 9.58846 97.9943 11.8288 97.9943 14.5939C97.9943 17.359 95.7539 19.5994 92.9888 19.5994Z" fill="#0000FF" />
+                  <path d="M39.7991 14.5939V4.58301H34.7937V5.92721C33.3203 5.07548 31.6128 4.58301 29.7882 4.58301C24.258 4.58301 19.7773 9.06773 19.7773 14.5939C19.7773 20.1201 24.2621 24.6048 29.7882 24.6048C31.6128 24.6048 33.3203 24.1164 34.7937 23.2606V24.6048H39.7991V14.5939ZM29.7882 19.5994C27.0231 19.5994 24.7828 17.359 24.7828 14.5939C24.7828 11.8288 27.0231 9.58846 29.7882 9.58846C32.5533 9.58846 34.7937 11.8288 34.7937 14.5939C34.7937 17.359 32.5533 19.5994 29.7882 19.5994Z" fill="#0000FF" />
+                </svg>
+              </div>
+
+              <div className="space-y-4">
+                <EstagZamp className="text-accent w-[70%] max-md:mx-auto md:w-full lg:max-w-72" />
+                <p className="text-balance">
+                  Seu próximo grande pedido? <strong className="block">Um estágio na Zamp.</strong>
+                </p>
+              </div>
+              <Button>Inscreva-se</Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute top-0 left-0 -z-10 h-full w-1/2 bg-linear-to-r from-white"></div>
+        <div className="absolute top-0 right-0 -z-10 h-full w-1/2 bg-linear-to-l from-white"></div>
+      </section>
+
+      <section className="bg-accent py-4 text-white">
+        <Marquee direction="left" speed={40}>
+          <div className="ml-10 flex gap-10 uppercase">
+            <p>
+              Seu próximo grande pedido? <strong className="font-bold">Um estágio na Zamp.</strong>
+            </p>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.41797 0V5.50061H12.7155L1.41797 16.4994V22H20.582V16.4994H9.28448L20.582 5.50061V0H1.41797Z" fill="white" />
+            </svg>
+            <p>
+              Monte seu <strong className="font-bold">combo de carreira.</strong>
+            </p>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.41797 0V5.50061H12.7155L1.41797 16.4994V22H20.582V16.4994H9.28448L20.582 5.50061V0H1.41797Z" fill="white" />
+            </svg>
+            <p>
+              Para quem quer <strong className="font-bold">crescer com gosto!</strong>
+            </p>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.41797 0V5.50061H12.7155L1.41797 16.4994V22H20.582V16.4994H9.28448L20.582 5.50061V0H1.41797Z" fill="white" />
+            </svg>
+            <p>
+              Seu próximo grande pedido? <strong className="font-bold">Um estágio na Zamp.</strong>
+            </p>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.41797 0V5.50061H12.7155L1.41797 16.4994V22H20.582V16.4994H9.28448L20.582 5.50061V0H1.41797Z" fill="white" />
+            </svg>
+            <p>
+              Monte seu <strong className="font-bold">combo de carreira.</strong>
+            </p>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.41797 0V5.50061H12.7155L1.41797 16.4994V22H20.582V16.4994H9.28448L20.582 5.50061V0H1.41797Z" fill="white" />
+            </svg>
+            <p>
+              Para quem quer <strong className="font-bold">crescer com gosto!</strong>
+            </p>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.41797 0V5.50061H12.7155L1.41797 16.4994V22H20.582V16.4994H9.28448L20.582 5.50061V0H1.41797Z" fill="white" />
+            </svg>
+          </div>
+        </Marquee>
+      </section>
+
       <section className="py-24">
         <div className="container">
           <div className="grid items-center gap-10 md:grid-cols-2">
