@@ -21,31 +21,31 @@ export default function Page() {
     { icon: Cake, text: "Day off no dia do aniversário" },
   ];
 
-  const ingredientes = [
+  const trilha = [
     {
       title: "Antes de qualquer estratégia, a realidade do negócio",
       description: "No primeiro mês, você vai viver a operação das nossas marcas de perto! O ritmo, o cliente, os processos que sustentam o negócio. Essa vivência será a base de repertório para todas as etapas seguintes do programa.",
-      image: { src: "/ingredientes-01.avif", alt: "" },
+      image: { src: "/trilha-01.avif", alt: "" },
     },
     {
       title: "Assessment de Carreira",
       description: "Ao final do primeiro mês, você vai passar por um Assessment de Carreira estruturado, ancorado nas mesmas 11 competências que orientam o desenvolvimento de lideranças na ZAMP. O objetivo é entender seu perfil com profundidade e conectar esse entendimento às oportunidades de desenvolvimento mais adequadas para você ao longo do programa.",
-      image: { src: "/ingredientes-02.avif", alt: "" },
+      image: { src: "/trilha-02.avif", alt: "" },
     },
     {
       title: "Projeto real, com prazo e resultado",
       description: "Você vai atuar em um projeto estratégico pré-definido, de impacto direto para a companhia. Ao longo do programa, você vai diagnosticar o problema, testar hipóteses e apresentar resultados a um Vice-Presidente.",
-      image: { src: "/ingredientes-03.avif", alt: "" },
+      image: { src: "/trilha-03.avif", alt: "" },
     },
     {
       title: "Um plano de desenvolvimento construído a partir do seu diagnóstico",
       description: "A partir do seu Assessment de Carreira, você vai receber um Plano de Desenvolvimento Individual próprio, combinando conteúdos do nosso catálogo corporativo com formações buscadas especificamente para as suas necessidades. Você também vai passar por uma trilha contínua de capacitação em resolução estruturada de problemas.",
-      image: { src: "/ingredientes-04.avif", alt: "" },
+      image: { src: "/trilha-04.avif", alt: "" },
     },
     {
       title: "Conexão com C-Levels",
       description: "A partir do terceiro mês, você vai participar de encontros mensais com Vice-Presidentes da companhia, com oportunidades de troca sobre estratégia, carreira e negócio ao longo da jornada.",
-      image: { src: "/ingredientes-05.avif", alt: "" },
+      image: { src: "/trilha-05.avif", alt: "" },
     },
   ];
 
@@ -277,7 +277,7 @@ export default function Page() {
         <FadeIn className="container">
           <div className="grid gap-x-10 gap-y-6 md:grid-cols-2">
             <div className="space-y-6">
-              <Headline icons="popeyes">Pré-requisitos</Headline>
+              <Headline icons="popeyes">Trilha de desenvolvimento</Headline>
               <h3 className="text-3xl font-light text-balance">
                 Os 5 ingredientes da <strong className="text-accent font-bold">sua aceleração</strong>
               </h3>
@@ -287,7 +287,7 @@ export default function Page() {
             </div>
           </div>
           <ul className="mt-10 space-y-6">
-            {ingredientes.map(({ title, description, image }, index) => {
+            {trilha.map(({ title, description, image }, index) => {
               const isEven = index % 2 !== 0;
               return (
                 <li key={title}>
@@ -409,8 +409,6 @@ export default function Page() {
         </FadeIn>
         <div className="absolute bottom-0 left-0 -z-10 h-[14%] w-full bg-white"></div>
       </section>
-
-      <section className="py-24"></section>
     </main>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { config } from "./config";
 import "./globals.css";
 
+import Footer from "@/components/ui/footer";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
@@ -18,7 +19,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${poppins.variable} antialiased`}>{children}</body>
+      <body className={`${poppins.variable} antialiased`}>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

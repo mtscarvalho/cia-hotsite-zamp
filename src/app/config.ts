@@ -3,6 +3,11 @@ export const config = {
     name: "Zamp",
     website: "https://sitedaempresa.com.br",
   },
+  utm: {
+    source: "zamp",
+    medium: "hotsite",
+    campaign: "programa_estagio_zamp_2027",
+  },
   program: {
     id: "1234",
     year: 2021,
