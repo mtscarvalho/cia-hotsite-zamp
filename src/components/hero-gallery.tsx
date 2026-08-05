@@ -29,7 +29,7 @@ export default function HeroGallery() {
     <div className="flex items-end">
       <div className="relative aspect-960/997 w-full max-w-240 origin-bottom-right md:scale-150 lg:origin-right">
         {heroImages.map((image, index) => (
-          <Image key={image.src} src={image.src} alt={image.alt} fill fetchPriority="high" priority={index === 0} loading="eager" sizes="960px" className={["object-contain transition-opacity duration-700 ease-in-out", index === activeIndex ? "opacity-100" : "opacity-0"].join(" ")} />
+          <Image key={image.src} src={image.src} alt={image.alt} fill priority={index === 0} loading="eager" sizes="960px" className={["object-contain transition-opacity duration-700 ease-in-out", index === activeIndex ? "opacity-100" : "opacity-0"].join(" ")} />
         ))}
       </div>
       <div className="z-10 flex gap-4 py-10 max-md:hidden md:flex-col">
