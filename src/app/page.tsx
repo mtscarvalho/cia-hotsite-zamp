@@ -11,6 +11,7 @@ import Headline from "@/components/headline";
 import HeroGallery from "@/components/hero-gallery";
 import ProcessoSeletivo from "@/components/processo-seletivo";
 import { Button } from "@/components/ui/button";
+import CrossFadeImages from "@/components/ui/crossfade-images";
 import FadeIn from "@/components/ui/fade-in";
 import { YouTubeEmbed } from "@/components/ui/youtube-embed";
 import Zamp from "@/components/zamp";
@@ -234,7 +235,13 @@ export default function Page() {
               </div>
             </div>
             <div className="text-center">
-              <Image className="sticky top-10 mx-auto rounded-xl" src="./pre-requisitos.avif" alt="Estgiárias felizes segurando produtos da Zamp" width={768} height={761} />
+              <CrossFadeImages
+                className="sticky top-10 mx-auto aspect-square w-full overflow-hidden rounded-xl"
+                images={[
+                  { src: "./pre-requisitos-01.avif", alt: "Estgiárias felizes segurando produtos da Zamp" },
+                  { src: "./pre-requisitos-02.avif", alt: "Estgiárias felizes segurando produtos da Zamp" },
+                ]}
+              />
             </div>
           </div>
         </FadeIn>
