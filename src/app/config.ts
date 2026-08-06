@@ -1,8 +1,8 @@
 export const config = {
-  url: "https://www.ciadeestagios.com.br/vagas/shopee/",
+  url: "https://www.ciadeestagios.com.br/vagas/zamp/",
   company: {
     name: "Zamp",
-    website: "https://sitedaempresa.com.br",
+    website: "https://www.zamp.com.br/",
   },
   utm: {
     source: "zamp",
@@ -10,9 +10,9 @@ export const config = {
     campaign: "programa_estagio_zamp_2027",
   },
   program: {
-    id: "1234",
-    year: 2021,
-    startDate: "2021-01-01",
-    endDate: "2021-12-31",
+    id: "8398",
+    year: 2026,
+    startDate: "2026-08-06",
+    endDate: "2026-09-20",
   },
 };
