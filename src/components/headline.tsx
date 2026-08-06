@@ -53,12 +53,12 @@ export default function Headline({ children, icons = "all", color = "dark" }: He
 
   return (
     <div className={cn("flex items-end justify-between border-b pb-4", colorClasses)}>
-      <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2">
         {iconsToRender.map((icon) => (
           <span key={icon}>{iconMap[icon]}</span>
         ))}
       </div>
-      <h2>{children}</h2>
+      <h2 className="shrink-0">{children}</h2>
     </div>
   );
 }

@@ -39,27 +39,27 @@ export default function Page() {
     {
       title: "Antes de qualquer estratégia, a realidade do negócio",
       description: "No primeiro mês, você vai viver a operação das nossas marcas de perto! O ritmo, o cliente, os processos que sustentam o negócio. Essa vivência será a base de repertório para todas as etapas seguintes do programa.",
-      image: { src: "/trilha-01.avif", alt: "" },
+      image: { src: "/trilha-01.avif", alt: "Jovem de cabelo cacheado sorrindo" },
     },
     {
       title: "Assessment de Carreira",
       description: "Ao final do primeiro mês, você vai passar por um Assessment de Carreira estruturado, ancorado nas mesmas 11 competências que orientam o desenvolvimento de lideranças na ZAMP. O objetivo é entender seu perfil com profundidade e conectar esse entendimento às oportunidades de desenvolvimento mais adequadas para você ao longo do programa.",
-      image: { src: "/trilha-02.avif", alt: "" },
+      image: { src: "/trilha-02.avif", alt: "Estagiária sorrindo enquanto utiliza o celular" },
     },
     {
       title: "Projeto real, com prazo e resultado",
       description: "Você vai atuar em um projeto estratégico pré-definido, de impacto direto para a companhia. Ao longo do programa, você vai diagnosticar o problema, testar hipóteses e apresentar resultados a um Vice-Presidente.",
-      image: { src: "/trilha-03.avif", alt: "" },
+      image: { src: "/trilha-03.avif", alt: "Dois jovens sorrindo em frente a um notebook com adesivos da Zamp" },
     },
     {
       title: "Um plano de desenvolvimento construído a partir do seu diagnóstico",
       description: "A partir do seu Assessment de Carreira, você vai receber um Plano de Desenvolvimento Individual próprio, combinando conteúdos do nosso catálogo corporativo com formações buscadas especificamente para as suas necessidades. Você também vai passar por uma trilha contínua de capacitação em resolução estruturada de problemas.",
-      image: { src: "/trilha-04.avif", alt: "" },
+      image: { src: "/trilha-04.avif", alt: "Jovens no escritório conversando enquanto utilizando notebook" },
     },
     {
       title: "Conexão com C-Levels",
       description: "A partir do terceiro mês, você vai participar de encontros mensais com Vice-Presidentes da companhia, com oportunidades de troca sobre estratégia, carreira e negócio ao longo da jornada.",
-      image: { src: "/trilha-05.avif", alt: "" },
+      image: { src: "/trilha-05.avif", alt: "Reunião no escritório da Zamp" },
     },
   ];
 
@@ -234,7 +234,7 @@ export default function Page() {
               </div>
             </div>
             <div className="text-center">
-              <Image className="sticky top-10 mx-auto rounded-xl" src="./pre-requisitos.avif" alt="Estágio Zamp" width={768} height={761} />
+              <Image className="sticky top-10 mx-auto rounded-xl" src="./pre-requisitos.avif" alt="Estgiárias felizes segurando produtos da Zamp" width={768} height={761} />
             </div>
           </div>
         </FadeIn>
@@ -261,13 +261,13 @@ export default function Page() {
               </Button>
             </div>
             <div className="flex flex-col gap-3.5">
-              <Image className="rounded-xl" src="./beneficios-01.avif" alt="Estágio Zamp" width={960} height={612} />
+              <Image className="rounded-xl" src="./beneficios-01.avif" alt="Estagiários sentados no escritório da Zamp" width={960} height={612} />
               <div className="grid grid-cols-12 gap-3.5">
                 <div className="col-span-5 grid gap-3.5">
-                  <Image className="rounded-xl" src="./beneficios-02.avif" alt="Estágio Zamp" width={380} height={380} />
-                  <Image className="rounded-xl" src="./beneficios-03.avif" alt="Estágio Zamp" width={380} height={380} />
+                  <Image className="rounded-xl" src="./beneficios-02.avif" alt="Estagiários utilizando headphone e notebook" width={380} height={380} />
+                  <Image className="rounded-xl" src="./beneficios-03.avif" alt="Estagiários conversando enquanto segura copo do Starbucks" width={380} height={380} />
                 </div>
-                <Image className="col-span-7 h-full flex-1 rounded-xl object-cover" src="./beneficios-04.avif" alt="Estágio Zamp" width={566} height={774} />
+                <Image className="col-span-7 h-full flex-1 rounded-xl object-cover" src="./beneficios-04.avif" alt="Estagiário sorrindo no Starbucks" width={566} height={774} />
               </div>
             </div>
           </div>
@@ -314,7 +314,7 @@ export default function Page() {
         <FadeIn>
           <div className="scrollbar-hide flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 md:mx-0 md:justify-center md:overflow-visible md:px-0">
             {DEPOIMENTOS.map(({ name, video, image }) => (
-              <div key={name} className="w-[82%] shrink-0 snap-center sm:w-[340px] md:w-auto md:shrink">
+              <div key={name} className="w-[82%] shrink-0 snap-center sm:w-85 md:w-auto md:shrink">
                 <YouTubeEmbed className="bg-brand-lighter-gray aspect-9/16 w-full rounded-xl" title={`Estágio Zamp | Depoimento - ${name}`} url={video} thumb={image} />
               </div>
             ))}
@@ -360,7 +360,9 @@ export default function Page() {
               <p>Aqui, a gente acredita que o verdadeiro sabor do sucesso é ter espaço pra criar, crescer, liderar e ser quem você é. Usamos tecnologia, inovação e muita parceria para entregar experiências que surpreendem nossos clientes e geram oportunidades para o nosso time.</p>
               <p>Temos apetite pelo futuro e ousadia para conquistar novos mercados, novos sabores e novas conexões. </p>
               <div className="pt-2">
-                <Button variant="white">Inscreva-se</Button>
+                <Button variant="white">
+                  <Link {...getApplyProps()}>Inscreva-se</Link>
+                </Button>
               </div>
             </div>
             <div className="">
@@ -383,7 +385,7 @@ export default function Page() {
                     fill="#FFB800"
                   />
                 </svg>
-                <Image className="mx-auto" src="./sobre.avif" alt="Estágio Zamp" width={960} height={534} />
+                <Image className="mx-auto" src="./sobre.avif" alt="Estagiárias sorrindo segurando produtos do Burguer King, Popeyes, Starbucks e Subway" width={960} height={534} />
               </div>
               <YouTubeEmbed className="rounded-xl" url="https://www.youtube.com/watch?v=SR_oYGt6fyo" title="Zamp - A marca por trás das marcas que você ama" />
             </div>
@@ -401,18 +403,20 @@ export default function Page() {
         </FadeIn>
       </section>
 
-      <section className="bg-accent relative z-0 overflow-hidden pt-36 text-white">
+      <section className="bg-accent relative z-0 overflow-hidden pt-16 text-white md:pt-36">
         <FadeIn className="container">
-          <div className="grid grid-cols-2 items-end gap-x-10">
-            <div className="space-y-6 pb-36">
+          <div className="grid items-end gap-x-20 gap-y-10 md:grid-cols-2">
+            <div className="space-y-6 md:pb-36">
               <div className="space-y-2">
                 <h2 className="uppercase">Estágio Zamp 2027</h2>
                 <p className="text-3xl font-bold text-balance lg:text-4xl">E aí, aceita esse combo de sucesso?</p>
               </div>
-              <Button variant="white">Inscreva-se</Button>
+              <Button variant="white">
+                <Link {...getApplyProps()}>Inscreva-se</Link>
+              </Button>
             </div>
             <div>
-              <Image className="pointer-events-none w-full origin-bottom translate-x-[-20%] scale-125" src="./call-to-action.avif" alt="Burger King, Popeyes, Starbucks e Subway" width={960} height={594} />
+              <Image className="pointer-events-none w-full origin-bottom md:translate-x-[-20%]" src="./call-to-action.avif" alt="Whooper do Burger King, frangos do Popeyes, frappuccino do Starbucks e um lanche Subway" width={960} height={594} />
             </div>
           </div>
         </FadeIn>

@@ -271,11 +271,11 @@ export default function ProcessoSeletivo() {
                       zIndex: burgerZIndexes[index],
                     }}
                   >
-                    <Image src={step.image} alt="" fill priority={index === 0} sizes="(max-width: 1024px) 100vw, 55vw" className="object-contain object-bottom" />
+                    <Image src={step.image} alt="" fill priority={index === 0} sizes="(max-width: 1024px) 100vw, 55vw" className="object-contain object-bottom" aria-hidden={true} />
                   </div>
                 ))}
               </div>
-              <Image src="./processo-seletivo-00.avif" alt="" fill sizes="(max-width: 1024px) 100vw, 55vw" className="object-contain object-bottom" />
+              <Image src="./processo-seletivo-00.avif" alt="Whooper do Burguer King" fill sizes="(max-width: 1024px) 100vw, 55vw" className="object-contain object-bottom" />
             </div>
           </div>
         </div>

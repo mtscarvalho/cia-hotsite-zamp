@@ -20,7 +20,7 @@
 }
 
 @utility focused {
-  @apply outline-2 outline-offset-1 outline-[red] outline-dashed;
+  @apply outline-accent outline-2 outline-offset-1 outline-dashed;
 }
 
 @utility container {
@@ -30,7 +30,10 @@
 }
 
 @layer base {
-  :focus,
+  :focus {
+    @apply outline-0;
+  }
+
   :focus-visible {
     @apply focused;
   }

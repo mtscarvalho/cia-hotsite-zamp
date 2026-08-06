@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 const SLIDE_DURATION = 2500;
 
 const heroImages = [
-  { src: "/hero-01.avif", alt: "Estágio Zamp — imagem 1" },
-  { src: "/hero-02.avif", alt: "Estágio Zamp — imagem 2" },
-  { src: "/hero-03.avif", alt: "Estágio Zamp — imagem 3" },
-  { src: "/hero-04.avif", alt: "Estágio Zamp — imagem 4" },
+  { src: "/hero-01.avif", alt: "Estagiária de óculos sorrindo e com a mão na cintura" },
+  { src: "/hero-02.avif", alt: "Estagiário de óculos sorrindo de braços cruzados" },
+  { src: "/hero-03.avif", alt: "Estagiária sorrindo feliz" },
+  { src: "/hero-04.avif", alt: "Estagiário de cabelo azul sorrindo" },
 ];
 
 export default function HeroGallery() {
@@ -36,7 +36,7 @@ export default function HeroGallery() {
         {heroImages.map((image, index) => {
           const isActive = index === activeIndex;
           return (
-            <button key={image.src} type="button" aria-label={`Mostrar imagem ${index + 1}`} aria-current={isActive ? "true" : undefined} onClick={() => setActiveIndex(index)} className={["relative aspect-square w-22 overflow-hidden rounded-xl lg:w-28", "transition-colors duration-700 ease-in-out", "focus-visible:ring-2 focus-visible:outline-none", "focus-visible:ring-accent focus-visible:ring-offset-2", isActive ? "bg-accent" : "bg-white"].join(" ")}>
+            <button key={image.src} type="button" aria-label={`Mostrar imagem ${index + 1}`} aria-current={isActive ? "true" : undefined} onClick={() => setActiveIndex(index)} className={["relative aspect-square w-22 overflow-hidden rounded-xl lg:w-28", "transition-colors duration-700 ease-in-out", isActive ? "bg-accent" : "bg-white"].join(" ")}>
               <Image src={image.src} alt="" fill sizes="112px" className={["translate-y-[60%] scale-[2.5] object-cover", "transition-opacity duration-700 ease-in-out", isActive ? "opacity-100" : "opacity-75"].join(" ")} />
             </button>
           );
