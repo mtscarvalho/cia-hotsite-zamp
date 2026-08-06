@@ -277,7 +277,7 @@ export default function Page() {
       <ProcessoSeletivo />
 
       <section className="py-24">
-        <FadeIn className="container">
+        <div className="container">
           <div className="grid gap-x-10 gap-y-6 md:grid-cols-2">
             <div className="space-y-6">
               <Headline icons="popeyes">Trilha de desenvolvimento</Headline>
@@ -307,7 +307,7 @@ export default function Page() {
               );
             })}
           </ul>
-        </FadeIn>
+        </div>
       </section>
 
       <section className="relative overflow-hidden pb-24">
