@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { BriefcaseMedical, Bus, Cake, Check, Dumbbell, HeartPlus, PiggyBank, Utensils } from "lucide-react";
+import { BriefcaseMedical, Bus, Cake, Check, Dumbbell, HeartPlus, Laugh, PiggyBank, Utensils } from "lucide-react";
 import Marquee from "react-fast-marquee";
 
 import { createMetadata } from "@/lib/create-metadata";
@@ -29,7 +29,7 @@ export default function Page() {
     { icon: Utensils, text: "Vale-refeição" },
     { icon: Bus, text: "Vale-transporte" },
     { icon: BriefcaseMedical, text: "Assistência médica" },
-    { icon: Check, text: "Assistência odontológica" },
+    { icon: Laugh, text: "Assistência odontológica" },
     { icon: HeartPlus, text: "Seguro de vida" },
     { icon: Dumbbell, text: "TotalPass" },
     { icon: Cake, text: "Day off no dia do aniversário" },
