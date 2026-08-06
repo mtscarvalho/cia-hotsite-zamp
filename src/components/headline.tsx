@@ -52,7 +52,7 @@ export default function Headline({ children, icons = "all", color = "dark" }: He
   const colorClasses = color === "light" ? "border-white text-white" : "border-brand-dark-gray text-brand-dark-gray";
 
   return (
-    <div className={cn("flex items-center justify-between border-b pb-4", colorClasses)}>
+    <div className={cn("flex items-end justify-between border-b pb-4", colorClasses)}>
       <div className="flex items-center gap-2">
         {iconsToRender.map((icon) => (
           <span key={icon}>{iconMap[icon]}</span>

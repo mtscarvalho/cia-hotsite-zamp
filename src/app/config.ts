@@ -1,4 +1,5 @@
 export const config = {
+  url: "https://www.ciadeestagios.com.br/vagas/shopee/",
   company: {
     name: "Zamp",
     website: "https://sitedaempresa.com.br",

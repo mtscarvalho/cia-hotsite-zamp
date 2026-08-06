@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-import { config } from "./config";
 import "./globals.css";
 
 import Footer from "@/components/ui/footer";
@@ -10,11 +8,6 @@ const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
 });
-
-export const metadata: Metadata = {
-  title: `Programa de Estágio ${config.company.name} ${config.program.year} | Companhia de Estágios`,
-  description: "",
-};
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

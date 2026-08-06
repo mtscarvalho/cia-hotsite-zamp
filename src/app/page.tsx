@@ -1,16 +1,30 @@
+import Image from "next/image";
+import Link from "next/link";
+
+import { BriefcaseMedical, Bus, Cake, Check, Dumbbell, HeartPlus, PiggyBank, Utensils } from "lucide-react";
+import Marquee from "react-fast-marquee";
+
+import { createMetadata } from "@/lib/create-metadata";
+
 import EstagZamp from "@/components/estag-zamp";
 import Headline from "@/components/headline";
 import HeroGallery from "@/components/hero-gallery";
 import ProcessoSeletivo from "@/components/processo-seletivo";
 import { Button } from "@/components/ui/button";
 import FadeIn from "@/components/ui/fade-in";
-import { YouTubeEmbed } from "@/components/youtube-embed";
-import { BriefcaseMedical, Bus, Cake, Check, Dumbbell, HeartPlus, PiggyBank, Utensils } from "lucide-react";
-import Image from "next/image";
-import Marquee from "react-fast-marquee";
+import { YouTubeEmbed } from "@/components/ui/youtube-embed";
+import Zamp from "@/components/zamp";
+import { getApplyProps } from "@/lib/get-apply-props";
+
+export async function generateMetadata() {
+  return createMetadata({
+    title: "Programa de Estágio Zamp 2027",
+    description: "Seu próximo grande pedido? Um estágio na Zamp! O programa foi criado para desenvolver jovens talentos que desejam acelerar sua carreira.",
+  });
+}
 
 export default function Page() {
-  const beneficios = [
+  const BENEFICIOS = [
     { icon: PiggyBank, text: "Bolsa-auxílio de R$ 3.500" },
     { icon: Utensils, text: "Vale-refeição" },
     { icon: Bus, text: "Vale-transporte" },
@@ -21,7 +35,7 @@ export default function Page() {
     { icon: Cake, text: "Day off no dia do aniversário" },
   ];
 
-  const trilha = [
+  const TRILHA = [
     {
       title: "Antes de qualquer estratégia, a realidade do negócio",
       description: "No primeiro mês, você vai viver a operação das nossas marcas de perto! O ritmo, o cliente, os processos que sustentam o negócio. Essa vivência será a base de repertório para todas as etapas seguintes do programa.",
@@ -49,7 +63,7 @@ export default function Page() {
     },
   ];
 
-  const depoimentos = [
+  const DEPOIMENTOS = [
     { name: "Catarina", video: "https://www.youtube.com/watch?v=88UmXQhkTuA", image: "/depoimento-01.avif" },
     { name: "Maria Fernanda", video: "https://www.youtube.com/watch?v=BVt6PPtjZPw", image: "/depoimento-02.avif" },
     { name: "Matteo", video: "https://www.youtube.com/watch?v=MOgKHtZsnDE", image: "/depoimento-03.avif" },
@@ -62,13 +76,8 @@ export default function Page() {
           <div className="grid items-end gap-x-10 gap-y-2 md:grid-cols-2">
             <div className="space-y-6 pt-10 max-md:text-center md:pb-24">
               <div className="flex items-center gap-x-10 gap-y-6 max-md:flex-col-reverse md:pb-10">
-                <Image src="./logos.svg" alt="Burger King, Popeyes, Starbucks e Subway" width={180} height={34} />
-                <svg width="103" height="30" viewBox="0 0 103 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.376953 4.58301V9.58846H10.7067L0.376953 19.5994V24.6088H17.9001V19.5994H7.57026L17.9001 9.58846V4.58301H0.376953Z" fill="#0000FF" />
-                  <path d="M69.2141 4.58301C66.223 4.58301 63.5386 5.89492 61.706 7.97783C59.8693 5.89896 57.189 4.58301 54.1978 4.58301C52.3733 4.58301 50.6657 5.07144 49.1924 5.92721V4.58301H42.9355V9.58846H44.1869V24.6088H49.1924V14.5979C49.1924 11.8328 51.4327 9.59249 54.1978 9.59249C56.9629 9.59249 59.2033 11.8328 59.2033 14.5979V24.6088H64.2087V14.5979C64.2087 11.8328 66.449 9.59249 69.2141 9.59249C71.9793 9.59249 74.2196 11.8328 74.2196 14.5979V24.6088H79.2251V14.5979C79.2251 9.06773 74.7403 4.58704 69.2141 4.58704V4.58301Z" fill="#0000FF" />
-                  <path d="M92.9888 4.58301C91.1643 4.58301 89.4568 5.07144 87.9834 5.92721V4.58301H81.7266V9.58846H82.9779V29.6143H87.9834V23.2646C89.4568 24.1164 91.1643 24.6088 92.9888 24.6088C98.519 24.6088 103 20.1241 103 14.5979C103 9.07177 98.515 4.58704 92.9888 4.58704V4.58301ZM92.9888 19.5994C90.2237 19.5994 87.9834 17.359 87.9834 14.5939C87.9834 11.8288 90.2237 9.58846 92.9888 9.58846C95.7539 9.58846 97.9943 11.8288 97.9943 14.5939C97.9943 17.359 95.7539 19.5994 92.9888 19.5994Z" fill="#0000FF" />
-                  <path d="M39.7991 14.5939V4.58301H34.7937V5.92721C33.3203 5.07548 31.6128 4.58301 29.7882 4.58301C24.258 4.58301 19.7773 9.06773 19.7773 14.5939C19.7773 20.1201 24.2621 24.6048 29.7882 24.6048C31.6128 24.6048 33.3203 24.1164 34.7937 23.2606V24.6048H39.7991V14.5939ZM29.7882 19.5994C27.0231 19.5994 24.7828 17.359 24.7828 14.5939C24.7828 11.8288 27.0231 9.58846 29.7882 9.58846C32.5533 9.58846 34.7937 11.8288 34.7937 14.5939C34.7937 17.359 32.5533 19.5994 29.7882 19.5994Z" fill="#0000FF" />
-                </svg>
+                <Image className="h-auto max-w-45" src="./logos.svg" alt="Burger King, Popeyes, Starbucks e Subway" width={443} height={95} />
+                <Zamp variant="full" />
               </div>
               <div className="space-y-4">
                 <EstagZamp className="text-accent w-[70%] max-w-72 max-md:mx-auto md:w-full" />
@@ -76,7 +85,9 @@ export default function Page() {
                   Seu próximo grande pedido? <strong className="block">Um estágio na Zamp.</strong>
                 </p>
               </div>
-              <Button>Inscreva-se</Button>
+              <Button asChild>
+                <Link {...getApplyProps()}>Inscreva-se</Link>
+              </Button>
             </div>
             <HeroGallery />
           </div>
@@ -92,39 +103,27 @@ export default function Page() {
               <p>
                 Seu próximo grande pedido? <strong className="font-bold">Um estágio na Zamp.</strong>
               </p>
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.41797 0V5.50061H12.7155L1.41797 16.4994V22H20.582V16.4994H9.28448L20.582 5.50061V0H1.41797Z" fill="white" />
-              </svg>
+              <Zamp variant="short" />
               <p>
                 Monte seu <strong className="font-bold">combo de carreira.</strong>
               </p>
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.41797 0V5.50061H12.7155L1.41797 16.4994V22H20.582V16.4994H9.28448L20.582 5.50061V0H1.41797Z" fill="white" />
-              </svg>
+              <Zamp variant="short" />
               <p>
                 Para quem quer <strong className="font-bold">crescer com gosto!</strong>
               </p>
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.41797 0V5.50061H12.7155L1.41797 16.4994V22H20.582V16.4994H9.28448L20.582 5.50061V0H1.41797Z" fill="white" />
-              </svg>
+              <Zamp variant="short" />
               <p>
                 Seu próximo grande pedido? <strong className="font-bold">Um estágio na Zamp.</strong>
               </p>
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.41797 0V5.50061H12.7155L1.41797 16.4994V22H20.582V16.4994H9.28448L20.582 5.50061V0H1.41797Z" fill="white" />
-              </svg>
+              <Zamp variant="short" />
               <p>
                 Monte seu <strong className="font-bold">combo de carreira.</strong>
               </p>
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.41797 0V5.50061H12.7155L1.41797 16.4994V22H20.582V16.4994H9.28448L20.582 5.50061V0H1.41797Z" fill="white" />
-              </svg>
+              <Zamp variant="short" />
               <p>
                 Para quem quer <strong className="font-bold">crescer com gosto!</strong>
               </p>
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.41797 0V5.50061H12.7155L1.41797 16.4994V22H20.582V16.4994H9.28448L20.582 5.50061V0H1.41797Z" fill="white" />
-              </svg>
+              <Zamp variant="short" />
             </div>
           </Marquee>
         </FadeIn>
@@ -143,7 +142,9 @@ export default function Page() {
               <p>Aqui, seu crescimento acontece na prática. Quem se destaca pode acelerar sua trajetória, avançar para novas posições, seguir para oportunidades como o Programa de Trainee e construir um caminho para futuras posições de liderança na Zamp.</p>
               <p>Porque, para a gente, estágio não é só uma porta de entrada.É o primeiro passo de uma carreira que pode ir muito mais longe e mais rápido. Aceita esse combo?</p>
               <div className="pt-2">
-                <Button>Inscreva-se</Button>
+                <Button asChild>
+                  <a {...getApplyProps()}>Inscreva-se</a>
+                </Button>
               </div>
             </div>
             <div className="space-y-6">
@@ -159,7 +160,7 @@ export default function Page() {
 
       <section className="bg-brand-dark-blue bg-[url('/pattern-dark.svg')] bg-center bg-repeat py-20 text-white">
         <FadeIn className="container">
-          <div className="mb-6 flex items-center justify-center gap-4">
+          <div className="mb-6 flex items-center justify-center gap-4 max-sm:flex-col max-sm:text-center">
             <h2 className="text-4xl font-bold">Z League</h2>
             <p className="max-w-[18ch]">Para crescer rápido é preciso protagonizar.</p>
           </div>
@@ -248,14 +249,16 @@ export default function Page() {
                 Seu combo de <strong className="text-accent font-bold">benefícios</strong>
               </h3>
               <ul className="space-y-4">
-                {beneficios.map(({ icon: Icon, text }) => (
+                {BENEFICIOS.map(({ icon: Icon, text }) => (
                   <li key={text} className="flex gap-3">
                     <Icon className="bg-brand-green size-12 shrink-0 rounded-full p-3 text-white" />
                     <p className="mt-3">{text}</p>
                   </li>
                 ))}
               </ul>
-              <Button>Inscreva-se</Button>
+              <Button asChild>
+                <a {...getApplyProps()}>Inscreva-se</a>
+              </Button>
             </div>
             <div className="flex flex-col gap-3.5">
               <Image className="rounded-xl" src="./beneficios-01.avif" alt="Estágio Zamp" width={960} height={612} />
@@ -287,7 +290,7 @@ export default function Page() {
             </div>
           </div>
           <ul className="mt-10 space-y-6">
-            {trilha.map(({ title, description, image }, index) => {
+            {TRILHA.map(({ title, description, image }, index) => {
               const isEven = index % 2 !== 0;
               return (
                 <li key={title}>
@@ -310,12 +313,14 @@ export default function Page() {
       <section className="relative overflow-hidden pb-24">
         <FadeIn className="container">
           <div className="flex justify-center gap-4">
-            {depoimentos.map(({ name, video, image }) => (
+            {DEPOIMENTOS.map(({ name, video, image }) => (
               <YouTubeEmbed key={name} className="bg-brand-lighter-gray aspect-9/16 max-w-82 rounded-xl" title={`Estágio Zamp | Depoimento - ${name}`} url={video} thumb={image} />
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Button>Inscreva-se</Button>
+            <Button asChild>
+              <a {...getApplyProps()}>Inscreva-se</a>
+            </Button>
           </div>
           <svg className="absolute right-0 bottom-10 left-1/2 -z-10 -translate-x-1/2" width="1406" height="435" viewBox="0 0 1406 435" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -386,7 +391,7 @@ export default function Page() {
               <p>Isso é a Zamp: um ecossistema de restaurantes e pessoas em constante evolução.</p>
             </div>
             <div className="flex justify-center">
-              <Image className="mx-auto" src="./logos.svg" alt="Burger King, Popeyes, Starbucks e Subway" width={443} height={95} />
+              <Image className="mx-auto w-auto" src="./logos.svg" alt="Burger King, Popeyes, Starbucks e Subway" width={443} height={95} />
             </div>
           </div>
         </FadeIn>

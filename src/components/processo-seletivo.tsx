@@ -223,13 +223,12 @@ export default function ProcessoSeletivo() {
        */}
       <div className="lg:sticky lg:top-0 lg:h-svh lg:overflow-hidden">
         <div className="relative z-10 container py-16 lg:h-full lg:py-0">
-          <div className="grid gap-12 lg:h-full lg:grid-cols-2 lg:items-center lg:gap-10">
+          <div className="grid gap-x-10 lg:h-full lg:grid-cols-2 lg:items-center">
             <div className="flex min-h-0 flex-col justify-center lg:py-16">
               <div data-process-intro className="space-y-5">
                 <Headline icons="popeyes" color="light">
                   Processo Seletivo
                 </Headline>
-
                 <h2 className="max-w-[18ch] text-3xl leading-[1.05] font-bold text-balance md:text-5xl">Passo a passo do seu pedido Zamp</h2>
               </div>
 
@@ -237,17 +236,20 @@ export default function ProcessoSeletivo() {
                * Mobile: all items are stacked vertically.
                * Desktop: items overlap in the animation area.
                */}
-              <ol className="mt-10 space-y-7 lg:relative lg:mt-14 lg:h-68 lg:space-y-0 lg:overflow-hidden">
-                {steps.map((step, index) => (
-                  <li key={step.title} data-process-step className="flex gap-4 text-balance lg:absolute lg:inset-x-0 lg:top-0">
-                    <span className="block min-w-10 text-2xl font-bold">{String(index + 1).padStart(2, "0")}.</span>
-                    <div className="max-w-120 space-y-2">
-                      <h3 className="text-lg leading-tight font-bold md:text-xl">{step.title}</h3>
-                      <p className="text-sm leading-snug md:text-base">{step.description}</p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
+              <div className="relative mt-10">
+                <div className="from-brand-red absolute top-0 left-0 z-20 h-10 w-full bg-linear-to-b max-lg:hidden"></div>
+                <ol className="space-y-7 lg:relative lg:h-68 lg:space-y-0 lg:overflow-hidden">
+                  {steps.map((step, index) => (
+                    <li key={step.title} data-process-step className="flex gap-4 text-balance lg:absolute lg:inset-x-0 lg:top-0 lg:pt-10">
+                      <span className="block min-w-10 text-2xl font-bold">{String(index + 1).padStart(2, "0")}.</span>
+                      <div className="max-w-120 space-y-2">
+                        <h3 className="text-lg leading-tight font-bold md:text-xl">{step.title}</h3>
+                        <p className="text-sm leading-snug md:text-base">{step.description}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
 
             {/*
@@ -257,7 +259,7 @@ export default function ProcessoSeletivo() {
              * Mobile: every layer is visible by default.
              * Desktop: GSAP controls the layer opacity.
              */}
-            <div className="relative flex min-h-0 items-end justify-center">
+            <div className="relative flex min-h-0 items-end justify-center max-lg:-mt-16 max-sm:-mt-10">
               <div role="img" aria-label="Hambúrguer montado com todas as etapas do processo seletivo" className="relative aspect-square w-full max-w-190">
                 {steps.map((step, index) => (
                   <div
